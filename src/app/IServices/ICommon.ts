@@ -1,10 +1,20 @@
-
 export enum ErrorCode {
   E0000 = '0000',
   E0001 = '0001',
   E0002 = '0002',
   E0003 = '0003',
   EFFFF = 'FFFF',
+}
+
+export enum AgeUnit {
+  Y = 'Y',
+  M = 'M',
+  D = 'D',
+  W = 'W',
+}
+export enum SexCode {
+  M = 'M',
+  F = 'F',
 }
 
 export interface IArticle {
@@ -35,7 +45,7 @@ export interface IIdentity {
 
 export interface IAge {
   Value: number;
-  Unit: 'Y'|'M'|'D'|'W';
+  Unit: AgeUnit;
 }
 
 export interface IUser {
@@ -43,7 +53,7 @@ export interface IUser {
   UserName: string;
   NickName: string;
   password: string;
-  SexCode?: 'M'|'F';
+  SexCode?: SexCode;
   Age?: IAge;
   Tel?: number;
   // ....
