@@ -1,3 +1,4 @@
+import {IResultInfo} from './ICommon'
 interface ISaveBlogConfigInput {
   BlogTitle?: string;
   BlogBgImag?: string;

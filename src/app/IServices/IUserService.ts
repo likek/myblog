@@ -1,3 +1,4 @@
+import {IResultInfo,IAge,IIdentity,IPageInfo} from './ICommon'
 interface ISaveUserInput {
   UserCode?: number;//null表示新增
   UserName?: string;

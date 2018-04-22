@@ -1,5 +1,5 @@
 import {IBlogConfigService} from "../IServices/IBlogConfigService";
-
+import {IResultInfo,IBlogConfig} from '../IServices/ICommon'
 export class BlogConfigService implements IBlogConfigService {
   loadBlogConfig(userID: number): IResultInfo {
     // ...

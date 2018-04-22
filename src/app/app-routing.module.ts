@@ -8,7 +8,6 @@ const routes: Routes = [
   {path:'blog/:id',component:BlogComponent}
   ];
 
-
 @NgModule({
   imports:[RouterModule.forRoot(routes)],
   exports: [RouterModule]

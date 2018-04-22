@@ -1,5 +1,5 @@
 import {IArticleGroupService} from "../IServices/IArticleGroupService";
-
+import {IResultInfo,IArticleGroup} from '../IServices/ICommon'
 export class ArticleGroupService implements IArticleGroupService {
   searchArticleGroup(userID:number): IResultInfo {
     // ...

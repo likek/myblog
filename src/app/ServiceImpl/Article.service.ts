@@ -1,4 +1,5 @@
 import {IArticleService} from '../IServices/IArticleService';
+import {IIdentity,IResultInfo,IPageInfo} from "../IServices/ICommon";
 
 export class ArticleService implements IArticleService {
   public saveArticle(idetity: IIdentity, json): IResultInfo {

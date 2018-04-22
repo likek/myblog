@@ -1,5 +1,5 @@
 import {IUserService} from '../IServices/IUserService';
-
+import {IResultInfo,IIdentity} from '../IServices/ICommon'
 export class UserService implements IUserService {
   public searchUser(identity: IIdentity): IResultInfo {
     // ...

@@ -1,3 +1,4 @@
+import {IIdentity,IResultInfo,IPageInfo} from './ICommon'
 interface ISaveArticleInput{
   ID?: number; // null表示新增
   UserCode: number;
