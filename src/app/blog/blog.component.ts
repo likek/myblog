@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ArticleGroupService} from "../ServiceImpl/ArticleGroup.service";
 import {BlogConfigService} from "../ServiceImpl/BlogConfig.service";
+import {IArticleGroup,IResultInfo,IBlogConfig} from "../IServices/ICommon";
 
 @Component({
   selector: 'app-blog',
@@ -27,23 +28,23 @@ export class BlogComponent implements OnInit {
   }
 
   private loadArticleGroupList(){
-    const articleGroup:IResultInfo = this.articleGroupService.searchArticleGroup(this.userID);
-    switch (articleGroup.ErrorCode) {
+    const res:IResultInfo = this.articleGroupService.searchArticleGroup(this.userID);
+    switch (res.ErrorCode) {
       case '0000':
-        this.articleGroupList = articleGroup.Result;
+        this.articleGroupList = res.Result;
         break;
       case '0001':
       case '0002':
       case '0003':
       default:
-        alert('错误:searchArticleGroup');
+        // ...
     }
   }
   private loadBlogConfig(){
-    const blogConfig: IResultInfo = this.blogConfigService.loadBlogConfig(this.userID);
-    switch (blogConfig.ErrorCode){
+    const blogConfigRes: IResultInfo = this.blogConfigService.loadBlogConfig(this.userID);
+    switch (blogConfigRes.ErrorCode){
       case '0000':
-        const res: IBlogConfig = blogConfig.Result;
+        const res: IBlogConfig = blogConfigRes.Result;
         if(res){
           this.title = res.BlogTitle;
           this.bgColor = res.BlogBgColor;
@@ -54,7 +55,7 @@ export class BlogComponent implements OnInit {
       case '0002':
       case '0003':
       default:
-        alert('错误:searchArticleGroup');
+        // ...
     }
   }
 }

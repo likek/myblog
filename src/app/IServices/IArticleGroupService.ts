@@ -1,4 +1,4 @@
-import {IResultInfo} from './ICommon'
+import {IResultInfo} from "./ICommon";
 interface ISaveArticleGroupInput {
   GroupID?: number;//空表示新增
   GroupTitle?: string;//默认为all
