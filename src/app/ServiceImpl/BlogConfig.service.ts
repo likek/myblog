@@ -1,15 +1,20 @@
 import {IBlogConfigService} from "../IServices/IBlogConfigService";
 
-class BlogConfigService implements IBlogConfigService {
+export class BlogConfigService implements IBlogConfigService {
   loadBlogConfig(userID: number): IResultInfo {
     // ...
+    const res: IBlogConfig = {
+      BlogBgImag:'',
+      BlogBgColor:'#fcdb1b',
+      BlogTitle:'xxx的博客主页'
+    };
     return {
       ErrorCode: '0000',
       Message: '',
-      Result: ''
+      Result: res
     };
   }
-  saveBlogConfig(userID: number, userConfig){
+  saveBlogConfig(userID: number, blogConfig){
     // ...
     return {
       ErrorCode: '0000',

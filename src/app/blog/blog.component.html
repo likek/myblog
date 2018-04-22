@@ -1,0 +1,9 @@
+<div [ngStyle]="{'background-color':bgColor,'background-image':bgImg}">
+  <div><a routerLink="/">返回主页</a></div>
+  <div>
+    <div>{{title}}</div>
+  </div>
+  <mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let articleGroup of articleGroupList"><span>{{articleGroup.GroupTitle}}</span></mat-list-item>
+  </mat-list>
+</div>

@@ -49,3 +49,10 @@ interface IArticleGroup{
   readonly GroupID:number,
   GroupTitle:string;
 }
+
+interface IBlogConfig {
+  BlogTitle: string;
+  BlogBgImag?: string;
+  BlogBgColor?: string;
+  // ...
+}

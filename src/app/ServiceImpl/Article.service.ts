@@ -1,6 +1,6 @@
 import {IArticleService} from '../IServices/IArticleService';
 
-class ArticleService implements IArticleService {
+export class ArticleService implements IArticleService {
   public saveArticle(idetity: IIdentity, json): IResultInfo {
     // ...
     return {
@@ -25,7 +25,7 @@ class ArticleService implements IArticleService {
       Result: ''
     };
   }
-  public searchArticle(userID: number, groupID: number, pageInfo: IPageInfo): IResultInfo {
+  public searchArticle(userID: number|null, groupID: number, pageInfo: IPageInfo): IResultInfo {
     // ...
     return {
       ErrorCode: '0000',

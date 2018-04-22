@@ -1,6 +1,6 @@
 import {IUserService} from '../IServices/IUserService';
 
-class UserService implements IUserService {
+export class UserService implements IUserService {
   public searchUser(identity: IIdentity): IResultInfo {
     // ...
     return {
