@@ -1,25 +1,18 @@
 import {IBlogConfigService} from "../IServices/IBlogConfigService";
 import {IResultInfo,IBlogConfig} from '../IServices/ICommon'
+import {Injectable} from "@angular/core";
+import {BLOGCONFIG, RESULTINFO} from "./mock-data";
+import {of} from "rxjs/observable/of";
+import {Observable} from "rxjs/Observable";
+
+@Injectable()
 export class BlogConfigService implements IBlogConfigService {
-  loadBlogConfig(userID: number): IResultInfo {
+  loadBlogConfig(userID: number): Observable<IResultInfo> {
     // ...
-    const res: IBlogConfig = {
-      BlogBgImag:'',
-      BlogBgColor:'#fcdb1b',
-      BlogTitle:'xxx的博客主页'
-    };
-    return {
-      ErrorCode: '0000',
-      Message: '',
-      Result: res
-    };
+    return of(BLOGCONFIG);
   }
-  saveBlogConfig(userID: number, blogConfig){
+  saveBlogConfig(userID: number, blogConfig): Observable<IResultInfo>{
     // ...
-    return {
-      ErrorCode: '0000',
-      Message: '',
-      Result: ''
-    };
+    return of(RESULTINFO);
   }
 }

@@ -1,28 +1,22 @@
 import {IUserService} from '../IServices/IUserService';
 import {IResultInfo,IIdentity} from '../IServices/ICommon'
+import {Injectable} from "@angular/core";
+import {Observable} from "rxjs/Observable";
+import {RESULTINFO} from "./mock-data";
+import {of} from "rxjs/observable/of";
+
+@Injectable()
 export class UserService implements IUserService {
-  public searchUser(identity: IIdentity): IResultInfo {
+  public searchUser(identity: IIdentity): Observable<IResultInfo> {
     // ...
-    return {
-      ErrorCode: '0000',
-      Message: '',
-      Result: ''
-    };
+    return of(RESULTINFO);
   }
-  public saveUser(identity: IIdentity, user): IResultInfo {
+  public saveUser(identity: IIdentity, user): Observable<IResultInfo> {
     // ...
-    return {
-      ErrorCode: '0000',
-      Message: '',
-      Result: ''
-    };
+    return of(RESULTINFO);
   }
-  public loadUser(userID: number): IResultInfo {
+  public loadUser(userID: number): Observable<IResultInfo> {
     // ...
-    return {
-      ErrorCode: '0000',
-      Message: '',
-      Result: ''
-    };
+    return of(RESULTINFO);
   }
 }

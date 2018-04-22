@@ -1,3 +1,12 @@
+
+export enum ErrorCode {
+  E0000 = '0000',
+  E0001 = '0001',
+  E0002 = '0002',
+  E0003 = '0003',
+  EFFFF = 'FFFF',
+}
+
 export interface IArticle {
   ID: number;
   Title: string;
@@ -14,7 +23,7 @@ export interface IArticle {
 * FFFF: 未知错误
 * */
 export interface IResultInfo {
-  ErrorCode: '0000'|'0001'|'0002'|'0003'|'FFFF';
+  ErrorCode: ErrorCode;
   Message: string;
   Result?: any;
 }

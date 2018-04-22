@@ -14,7 +14,6 @@ import {ArticleService} from "./ServiceImpl/Article.service";
 import {ArticleGroupService} from "./ServiceImpl/ArticleGroup.service";
 import {BlogConfigService} from "./ServiceImpl/BlogConfig.service";
 import {UserService} from "./ServiceImpl/User.service";
-import {IArticleGroupService} from "./IServices/IArticleGroupService";
 
 @NgModule({
   declarations: [

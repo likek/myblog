@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ArticleGroupService} from "../ServiceImpl/ArticleGroup.service";
 import {BlogConfigService} from "../ServiceImpl/BlogConfig.service";
@@ -9,6 +9,7 @@ import {IArticleGroup,IResultInfo,IBlogConfig} from "../IServices/ICommon";
   templateUrl: './blog.component.html',
   styleUrls: ['./blog.component.css']
 })
+
 export class BlogComponent implements OnInit {
   public articleGroupList: IArticleGroup[];
   public title: string = '';
@@ -28,34 +29,36 @@ export class BlogComponent implements OnInit {
   }
 
   private loadArticleGroupList(){
-    const res:IResultInfo = this.articleGroupService.searchArticleGroup(this.userID);
-    switch (res.ErrorCode) {
-      case '0000':
-        this.articleGroupList = res.Result;
-        break;
-      case '0001':
-      case '0002':
-      case '0003':
-      default:
+    this.articleGroupService.searchArticleGroup(this.userID).subscribe(res=>{
+      switch (res.ErrorCode) {
+        case '0000':
+          this.articleGroupList = res.Result;
+          break;
+        case '0001':
+        case '0002':
+        case '0003':
+        default:
         // ...
-    }
+      }
+    });
   }
   private loadBlogConfig(){
-    const blogConfigRes: IResultInfo = this.blogConfigService.loadBlogConfig(this.userID);
-    switch (blogConfigRes.ErrorCode){
-      case '0000':
-        const res: IBlogConfig = blogConfigRes.Result;
-        if(res){
-          this.title = res.BlogTitle;
-          this.bgColor = res.BlogBgColor;
-          this.bgImg = res.BlogBgImag;
-        }
-        break;
-      case '0001':
-      case '0002':
-      case '0003':
-      default:
+    this.blogConfigService.loadBlogConfig(this.userID).subscribe(blogConfigRes=>{
+      switch (blogConfigRes.ErrorCode){
+        case '0000':
+          const res: IBlogConfig = blogConfigRes.Result;
+          if(res){
+            this.title = res.BlogTitle;
+            this.bgColor = res.BlogBgColor;
+            this.bgImg = res.BlogBgImag;
+          }
+          break;
+        case '0001':
+        case '0002':
+        case '0003':
+        default:
         // ...
-    }
+      }
+    });
   }
 }
