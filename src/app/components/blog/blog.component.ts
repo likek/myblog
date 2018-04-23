@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ArticleGroupService} from "../../Services/ServiceImpl/ArticleGroup.service";
 import {BlogConfigService} from "../../Services/ServiceImpl/BlogConfig.service";
-import {Dict_ArticleGroup,Dict_ResultInfo,Dict_BlogConfig} from "../../Services/Models/Dict.model";
+import {Dict_ArticleGroup,Dict_ErrorCode,Dict_BlogConfig} from "../../Services/Models/Dict.model";
 
 @Component({
   selector: 'app-blog',
@@ -32,12 +32,13 @@ export class BlogComponent implements OnInit {
   private loadArticleGroupList(){
     this.articleGroupService.searchArticleGroup(this.userID).subscribe(res=>{
       switch (res.ErrorCode) {
-        case '0000':
+        case Dict_ErrorCode.E0000:
           this.articleGroupList = res.Result;
           break;
-        case '0001':
-        case '0002':
-        case '0003':
+        case Dict_ErrorCode.E0001:
+        case Dict_ErrorCode.E0002:
+        case Dict_ErrorCode.E0003:
+        case Dict_ErrorCode.EFFFF:
         default:
         // ...
       }
@@ -46,7 +47,7 @@ export class BlogComponent implements OnInit {
   private loadBlogConfig(){
     this.blogConfigService.loadBlogConfig(this.userID).subscribe(blogConfigRes=>{
       switch (blogConfigRes.ErrorCode){
-        case '0000':
+        case Dict_ErrorCode.E0000:
           const res: Dict_BlogConfig = blogConfigRes.Result;
           if(res){
             this.title = res.BlogTitle;
@@ -54,9 +55,10 @@ export class BlogComponent implements OnInit {
             this.bgImg = res.BlogBgImag;
           }
           break;
-        case '0001':
-        case '0002':
-        case '0003':
+        case Dict_ErrorCode.E0001:
+        case Dict_ErrorCode.E0002:
+        case Dict_ErrorCode.E0003:
+        case Dict_ErrorCode.EFFFF:
         default:
         // ...
       }

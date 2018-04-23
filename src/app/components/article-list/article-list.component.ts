@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ArticleService} from "../../Services/ServiceImpl/Article.service";
-import {Dict_Article, Dict_PageInfo} from "../../Services/Models/Dict.model";
+import {Dict_Article, Dict_PageInfo,Dict_ErrorCode} from "../../Services/Models/Dict.model";
 import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
@@ -33,12 +33,13 @@ export class ArticleListComponent implements OnInit {
     };
     this.articleService.searchArticle(this.userID,this.groupID,pageInfo).subscribe(res=>{
       switch (res.ErrorCode){
-        case '0000':
+        case Dict_ErrorCode.E0000:
           this.articleList = res.Result;
           break;
-        case '0001':
-        case '0002':
-        case '0003':
+        case Dict_ErrorCode.E0001:
+        case Dict_ErrorCode.E0002:
+        case Dict_ErrorCode.E0003:
+        case Dict_ErrorCode.EFFFF:
         default:
           // ...
       }
