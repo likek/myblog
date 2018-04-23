@@ -1,0 +1,25 @@
+.main-container{
+  display: flex;
+}
+.articleGroupList{
+  border-right: 1px solid #000;
+  min-width: 90px;
+  max-width: 160px;
+  padding: 0 6px;
+  box-sizing: border-box;
+}
+.articleList{
+  flex: 1;
+}
+
+.UnselectedGroup,.SelectedGroup{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-bottom: 2px solid #ddd;
+  cursor: pointer;
+}
+.SelectedGroup{
+  background-color: #000000;
+  color: #ffffff;
+}

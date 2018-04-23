@@ -65,7 +65,7 @@ export interface IPageInfo {
 }
 
 export interface IArticleGroup{
-  readonly GroupID:number,
+  readonly GroupID?:number,
   GroupTitle:string;
 }
 

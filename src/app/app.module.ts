@@ -9,6 +9,7 @@ import {MatListModule} from '@angular/material/list';
 import { AppComponent } from './app.component';
 import { IndexComponent } from './index/index.component';
 import { BlogComponent } from './blog/blog.component';
+import { ArticleListComponent } from './article-list/article-list.component';
 
 import {ArticleService} from "./ServiceImpl/Article.service";
 import {ArticleGroupService} from "./ServiceImpl/ArticleGroup.service";
@@ -20,6 +21,7 @@ import {UserService} from "./ServiceImpl/User.service";
     AppComponent,
     BlogComponent,
     IndexComponent,
+    ArticleListComponent,
   ],
   imports: [
     BrowserModule,

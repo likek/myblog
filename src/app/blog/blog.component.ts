@@ -11,11 +11,12 @@ import {IArticleGroup,IResultInfo,IBlogConfig} from "../IServices/ICommon";
 })
 
 export class BlogComponent implements OnInit {
-  public articleGroupList: IArticleGroup[];
-  public title: string = '';
-  public bgColor: string = '#fff';
-  public bgImg: string = '';
-  private userID:number = +this.route.snapshot.paramMap.get('id');
+  protected articleGroupList: IArticleGroup[];
+  protected title: string = '';
+  protected bgColor: string = '#fff';
+  protected bgImg: string = '';
+  protected currGroupID?: number = null;
+  protected userID:number = +this.route.snapshot.paramMap.get('id');
 
   constructor(
     private route: ActivatedRoute,

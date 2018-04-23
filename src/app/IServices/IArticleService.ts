@@ -15,6 +15,6 @@ export interface IArticleService {
   deleteArticle(idetity: IIdentity, articleID: number): Observable<IResultInfo>;
   // 加载文章
   loadArticle(articleID: number): Observable<IResultInfo>;
-  // 查询用户某分组下的所有文章
+  // 查询用户某分组下的所有文章简略信息
   searchArticle(userID: number, groupID: number, pageInfo: IPageInfo): Observable<IResultInfo>;
 }
