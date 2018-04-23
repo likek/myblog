@@ -7,14 +7,15 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 
 import { AppComponent } from './app.component';
-import { IndexComponent } from './index/index.component';
-import { BlogComponent } from './blog/blog.component';
-import { ArticleListComponent } from './article-list/article-list.component';
+import { IndexComponent } from './components/index/index.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { ArticleListComponent } from './components/article-list/article-list.component';
 
-import {ArticleService} from "./ServiceImpl/Article.service";
-import {ArticleGroupService} from "./ServiceImpl/ArticleGroup.service";
-import {BlogConfigService} from "./ServiceImpl/BlogConfig.service";
-import {UserService} from "./ServiceImpl/User.service";
+import {ArticleService} from "./Services/ServiceImpl/Article.service";
+import {ArticleGroupService} from "./Services/ServiceImpl/ArticleGroup.service";
+import {BlogConfigService} from "./Services/ServiceImpl/BlogConfig.service";
+import {UserService} from "./Services/ServiceImpl/User.service";
+import { ArticleDetailComponent } from './components/article-detail/article-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {UserService} from "./ServiceImpl/User.service";
     BlogComponent,
     IndexComponent,
     ArticleListComponent,
+    ArticleDetailComponent,
   ],
   imports: [
     BrowserModule,

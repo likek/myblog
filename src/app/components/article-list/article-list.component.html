@@ -1,0 +1,4 @@
+<div *ngFor="let article of articleList" class="article">
+  <div><a routerLink="../article" [queryParams]="{articleID:article.ID}">{{article.Title}}</a></div>
+  <div>{{article.Content}}</div>
+</div>

@@ -1,14 +1,14 @@
-import {IResultInfo} from "../IServices/ICommon";
-import {ErrorCode} from "../IServices/ICommon";
+import {Dict_Article, Dict_ResultInfo} from "../Models/Dict.model";
+import {Dict_ErrorCode} from "../Models/Dict.model";
 
 // 所有模拟数据
-export const RESULTINFO: IResultInfo = {
-  ErrorCode : ErrorCode.E0000,
+export const RESULTINFO: Dict_ResultInfo = {
+  ErrorCode : Dict_ErrorCode.E0000,
   Message :'',
   Result :''
 };
-export const ARTICLEGROUPLIST: IResultInfo = {
-  ErrorCode : ErrorCode.E0000,
+export const ARTICLEGROUPLIST: Dict_ResultInfo = {
+  ErrorCode : Dict_ErrorCode.E0000,
   Message : '',
   Result :  [
     {GroupID:null,GroupTitle:'全部文章'},
@@ -17,8 +17,8 @@ export const ARTICLEGROUPLIST: IResultInfo = {
   ]
 };
 
-export const BLOGCONFIG: IResultInfo = {
-  ErrorCode : ErrorCode.E0000,
+export const BLOGCONFIG: Dict_ResultInfo = {
+  ErrorCode : Dict_ErrorCode.E0000,
   Message : '',
   Result :  {
     BlogBgImag:'',
@@ -26,8 +26,8 @@ export const BLOGCONFIG: IResultInfo = {
     BlogTitle:'xxx的博客主页'
   }
 };
-export const ARTICLELISTGROUP1: IResultInfo = {
-  ErrorCode : ErrorCode.E0000,
+export const ARTICLELISTGROUP1: Dict_ResultInfo = {
+  ErrorCode : Dict_ErrorCode.E0000,
   Message : '',
   Result :  [
     {ID: 1, Title: '文章1', Content: '文章内容简略信息1', UserCode: 1, GroupID: 1},
@@ -37,8 +37,8 @@ export const ARTICLELISTGROUP1: IResultInfo = {
     {ID: 7, Title: '文章7', Content: '文章内容简略信息7', UserCode: 1, GroupID: 1},
   ]
 };
-export const ARTICLELISTGROUP2: IResultInfo = {
-  ErrorCode : ErrorCode.E0000,
+export const ARTICLELISTGROUP2: Dict_ResultInfo = {
+  ErrorCode : Dict_ErrorCode.E0000,
   Message : '',
   Result :  [
     {ID: 4, Title: '文章4', Content: '文章内容简略信息4', UserCode: 1, GroupID: 2},
@@ -46,8 +46,20 @@ export const ARTICLELISTGROUP2: IResultInfo = {
   ]
 };
 
-export const ARTICLELISTGROUPALL: IResultInfo = {
-  ErrorCode : ErrorCode.E0000,
+export const ARTICLELISTGROUPALL: Dict_ResultInfo = {
+  ErrorCode : Dict_ErrorCode.E0000,
   Message : '',
   Result :  ARTICLELISTGROUP1.Result.concat(ARTICLELISTGROUP2.Result),
+};
+
+export const ARTICLE: Dict_ResultInfo = {
+  ErrorCode : Dict_ErrorCode.E0000,
+  Message : '',
+  Result :  {
+    ID: 1,
+    Title: "文章title",
+    Content: '文章内容',
+    UserCode: 1,
+    GroupID: null,
+  }
 };

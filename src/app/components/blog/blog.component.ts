@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {ArticleGroupService} from "../ServiceImpl/ArticleGroup.service";
-import {BlogConfigService} from "../ServiceImpl/BlogConfig.service";
-import {IArticleGroup,IResultInfo,IBlogConfig} from "../IServices/ICommon";
+import {ArticleGroupService} from "../../Services/ServiceImpl/ArticleGroup.service";
+import {BlogConfigService} from "../../Services/ServiceImpl/BlogConfig.service";
+import {Dict_ArticleGroup,Dict_ResultInfo,Dict_BlogConfig} from "../../Services/Models/Dict.model";
 
 @Component({
   selector: 'app-blog',
@@ -11,7 +11,7 @@ import {IArticleGroup,IResultInfo,IBlogConfig} from "../IServices/ICommon";
 })
 
 export class BlogComponent implements OnInit {
-  protected articleGroupList: IArticleGroup[];
+  protected articleGroupList: Dict_ArticleGroup[];
   protected title: string = '';
   protected bgColor: string = '#fff';
   protected bgImg: string = '';
@@ -47,7 +47,7 @@ export class BlogComponent implements OnInit {
     this.blogConfigService.loadBlogConfig(this.userID).subscribe(blogConfigRes=>{
       switch (blogConfigRes.ErrorCode){
         case '0000':
-          const res: IBlogConfig = blogConfigRes.Result;
+          const res: Dict_BlogConfig = blogConfigRes.Result;
           if(res){
             this.title = res.BlogTitle;
             this.bgColor = res.BlogBgColor;

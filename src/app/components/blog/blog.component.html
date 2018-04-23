@@ -1,0 +1,19 @@
+<div [ngStyle]="{'background-color':bgColor,'background-image':bgImg}">
+  <div class="header">
+    <div><a routerLink="/">返回主页</a></div>
+    <div>
+      <div>{{title}}</div>
+    </div>
+  </div>
+  <div class="main-container">
+    <mat-list role="list" class="articleGroupList">
+      <mat-list-item role="listitem" *ngFor="let articleGroup of articleGroupList">
+        <a routerLink="articleList" [queryParams]="{userID:userID,groupID:articleGroup.GroupID}"
+           [ngClass]="articleGroup.GroupID === currGroupID ? 'SelectedGroup':'UnselectedGroup'"
+           (click)="currGroupID = articleGroup.GroupID"
+        >{{articleGroup.GroupTitle}}</a>
+      </mat-list-item>
+    </mat-list>
+    <router-outlet></router-outlet>
+  </div>
+</div>

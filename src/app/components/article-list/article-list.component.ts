@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ArticleService} from "../ServiceImpl/Article.service";
-import {IArticle, IPageInfo} from "../IServices/ICommon";
+import {ArticleService} from "../../Services/ServiceImpl/Article.service";
+import {Dict_Article, Dict_PageInfo} from "../../Services/Models/Dict.model";
 import {ActivatedRoute, Params} from "@angular/router";
 
 @Component({
@@ -11,7 +11,7 @@ import {ActivatedRoute, Params} from "@angular/router";
 export class ArticleListComponent implements OnInit {
   protected userID: number;
   protected groupID: number;
-  protected articleList?: IArticle[];
+  protected articleList?: Dict_Article[];
   constructor(
     private articleService: ArticleService,
     private activatedRoute:ActivatedRoute,
@@ -27,7 +27,7 @@ export class ArticleListComponent implements OnInit {
   }
 
   private loadArticleList() {
-    const pageInfo: IPageInfo = {
+    const pageInfo: Dict_PageInfo = {
       PageSize: 9999,
       PageIndex: 1,
     };

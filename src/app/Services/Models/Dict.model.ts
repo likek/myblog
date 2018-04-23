@@ -1,4 +1,4 @@
-export enum ErrorCode {
+export enum Dict_ErrorCode {
   E0000 = '0000',
   E0001 = '0001',
   E0002 = '0002',
@@ -6,23 +6,24 @@ export enum ErrorCode {
   EFFFF = 'FFFF',
 }
 
-export enum AgeUnit {
+export enum Dict_AgeUnit {
   Y = 'Y',
   M = 'M',
   D = 'D',
   W = 'W',
 }
-export enum SexCode {
+export enum Dict_SexCode {
   M = 'M',
   F = 'F',
 }
 
-export interface IArticle {
+export interface Dict_Article {
   ID: number;
   Title: string;
   Content: string;
   UserCode: number;
   GroupID: number;
+  // ....
 }
 
 /*
@@ -32,44 +33,44 @@ export interface IArticle {
 * 0003: DBService相关错误
 * FFFF: 未知错误
 * */
-export interface IResultInfo {
-  ErrorCode: ErrorCode;
+export interface Dict_ResultInfo {
+  ErrorCode: Dict_ErrorCode;
   Message: string;
   Result?: any;
 }
 
-export interface IIdentity {
+export interface Dict_Identity {
   UserCode: number;
   SessionID: string;
 }
 
-export interface IAge {
+export interface Dict_Age {
   Value: number;
-  Unit: AgeUnit;
+  Unit: Dict_AgeUnit;
 }
 
-export interface IUser {
+export interface Dict_User {
   readonly UserCode: number;
   UserName: string;
   NickName: string;
   password: string;
-  SexCode?: SexCode;
-  Age?: IAge;
+  SexCode?: Dict_SexCode;
+  Age?: Dict_Age;
   Tel?: number;
   // ....
 }
 // 分页信息(入参)
-export interface IPageInfo {
+export interface Dict_PageInfo {
   PageSize: number;
   PageIndex: number;
 }
 
-export interface IArticleGroup{
+export interface Dict_ArticleGroup{
   readonly GroupID?:number,
   GroupTitle:string;
 }
 
-export interface IBlogConfig {
+export interface Dict_BlogConfig {
   BlogTitle: string;
   BlogBgImag?: string;
   BlogBgColor?: string;
