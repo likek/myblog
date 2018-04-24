@@ -28,7 +28,7 @@ export interface Dict_Article {
   readonly ID: number;
   Title: string;
   Content: string;
-  UserCode: number;
+  UserID: number;
   GroupID: number;
   // ....
 }
@@ -40,7 +40,7 @@ export interface Dict_ResultInfo {
 }
 
 export interface Dict_Identity {
-  UserCode: number;
+  UserID: number;
   SessionID: string;
 }
 
@@ -50,7 +50,7 @@ export interface Dict_Age {
 }
 
 export interface Dict_User {
-  readonly UserCode: number;
+  readonly UserID: number;
   UserName: string;
   NickName: string;
   password: string;
@@ -71,7 +71,7 @@ export interface Dict_ArticleGroup{
 }
 
 export interface Dict_BlogConfig {
-  readonly userCode: number;
+  readonly UserID: number;
   BlogTitle: string;
   BlogBgImag?: string;
   BlogBgColor?: string;

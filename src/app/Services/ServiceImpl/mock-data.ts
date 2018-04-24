@@ -30,19 +30,19 @@ export const ARTICLELISTGROUP1: Dict_ResultInfo = {
   ErrorCode : Dict_ErrorCode.E0000,
   Message : '',
   Result :  [
-    {ID: 1, Title: '文章1', Content: '文章内容简略信息1', UserCode: 1, GroupID: 1},
-    {ID: 2, Title: '文章2', Content: '文章内容简略信息2', UserCode: 1, GroupID: 1},
-    {ID: 3, Title: '文章3', Content: '文章内容简略信息3', UserCode: 1, GroupID: 1},
-    {ID: 6, Title: '文章6', Content: '文章内容简略信息6', UserCode: 1, GroupID: 1},
-    {ID: 7, Title: '文章7', Content: '文章内容简略信息7', UserCode: 1, GroupID: 1},
+    {ID: 1, Title: '文章1', Content: '文章内容简略信息1', UserID: 1, GroupID: 1},
+    {ID: 2, Title: '文章2', Content: '文章内容简略信息2', UserID: 1, GroupID: 1},
+    {ID: 3, Title: '文章3', Content: '文章内容简略信息3', UserID: 1, GroupID: 1},
+    {ID: 6, Title: '文章6', Content: '文章内容简略信息6', UserID: 1, GroupID: 1},
+    {ID: 7, Title: '文章7', Content: '文章内容简略信息7', UserID: 1, GroupID: 1},
   ]
 };
 export const ARTICLELISTGROUP2: Dict_ResultInfo = {
   ErrorCode : Dict_ErrorCode.E0000,
   Message : '',
   Result :  [
-    {ID: 4, Title: '文章4', Content: '文章内容简略信息4', UserCode: 1, GroupID: 2},
-    {ID: 5, Title: '文章5', Content: '文章内容简略信息5', UserCode: 1, GroupID: 2},
+    {ID: 4, Title: '文章4', Content: '文章内容简略信息4', UserID: 1, GroupID: 2},
+    {ID: 5, Title: '文章5', Content: '文章内容简略信息5', UserID: 1, GroupID: 2},
   ]
 };
 
@@ -59,7 +59,16 @@ export const ARTICLE: Dict_ResultInfo = {
     ID: 1,
     Title: "文章title",
     Content: '文章内容',
-    UserCode: 1,
+    UserID: 1,
     GroupID: null,
   }
+};
+
+export const RECOMMENDEDARTICLELIST: Dict_ResultInfo = {
+  ErrorCode : Dict_ErrorCode.E0000,
+  Message : '',
+  Result : [
+    {ID: 4, Title: '文章4', Content: '文章内容简略信息4', UserID: 1, GroupID: 2},
+    {ID: 7, Title: '文章7', Content: '文章内容简略信息7', UserID: 1, GroupID: 1},
+  ]
 };

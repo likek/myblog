@@ -3,5 +3,11 @@
 </mat-toolbar>
 <div>
   <div>最新文章推荐:</div>
-  <div><a routerLink="/blog/1/article" [queryParams]="{articleID:2}">userID为1 articleID为2的文章</a></div>
+  <div>
+    <p *ngFor="let article of recommendedArticleList">
+      <a  routerLink="/blog/{{article.UserID}}/article" [queryParams]="{articleID:article.ID}">
+        userID为{{article.UserID}} articleID为{{article.ID}}的文章
+      </a>
+    </p>
+  </div>
 </div>

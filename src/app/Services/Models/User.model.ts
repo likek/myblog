@@ -2,7 +2,7 @@ import {Dict_ResultInfo,Dict_Age,Dict_Identity,Dict_PageInfo} from './Dict.model
 import {Observable} from "rxjs/Observable";
 
 interface ISaveUserInput {
-  UserCode?: number;//null表示新增
+  UserID?: number;//null表示新增
   UserName?: string;
   NickName?: string;
   password?: string;
