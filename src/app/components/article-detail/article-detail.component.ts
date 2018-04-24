@@ -40,4 +40,8 @@ export class ArticleDetailComponent implements OnInit {
       }
     })
   }
+
+  protected a(){
+    this.article.Content = new Date().getTime() + "";
+  }
 }

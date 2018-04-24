@@ -20,6 +20,7 @@ export class ArticleListComponent implements OnInit {
   ngOnInit() {
     this.userID = this.activatedRoute.snapshot.queryParams['userID'];
     this.groupID = this.activatedRoute.snapshot.queryParams['groupID'];
+
     this.activatedRoute.queryParams.subscribe((params:Params)=>{
       this.userID = params['userID'];this.groupID = params['groupID'];
       this.loadArticleList();

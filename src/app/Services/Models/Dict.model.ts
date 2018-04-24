@@ -1,3 +1,10 @@
+/*
+* 0000: 成功
+* 0001: 入参相关错误
+* 0002: 没有权限
+* 0003: DBService相关错误
+* FFFF: 未知错误
+* */
 export enum Dict_ErrorCode {
   E0000 = '0000',
   E0001 = '0001',
@@ -18,7 +25,7 @@ export enum Dict_SexCode {
 }
 
 export interface Dict_Article {
-  ID: number;
+  readonly ID: number;
   Title: string;
   Content: string;
   UserCode: number;
@@ -26,13 +33,6 @@ export interface Dict_Article {
   // ....
 }
 
-/*
-* 0000: 成功
-* 0001: 入参相关错误
-* 0002: 没有权限
-* 0003: DBService相关错误
-* FFFF: 未知错误
-* */
 export interface Dict_ResultInfo {
   ErrorCode: Dict_ErrorCode;
   Message: string;
@@ -71,6 +71,7 @@ export interface Dict_ArticleGroup{
 }
 
 export interface Dict_BlogConfig {
+  readonly userCode: number;
   BlogTitle: string;
   BlogBgImag?: string;
   BlogBgColor?: string;
