@@ -7,6 +7,7 @@ import {ArticleDetailComponent} from "./components/article-detail/article-detail
 
 const routes: Routes = [
   {path:'',component:IndexComponent},
+  {path:'blog',redirectTo:''},
   {path:'blog/:id',component:BlogComponent,children:[
       {path:'articleList',component:ArticleListComponent},
       {path:'article',component:ArticleDetailComponent},
